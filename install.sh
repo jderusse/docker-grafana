@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -ex
-
 if [ ! -z "${GF_INSTALL_PLUGINS_GIT}" ]; then
   OLDIFS=$IFS
   IFS=','
