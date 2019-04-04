@@ -1,5 +1,6 @@
 FROM grafana/grafana
 
+USER root
 RUN apt-get update \
  && apt-get -y --no-install-recommends install \
         git \
@@ -8,4 +9,6 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 COPY ./install.sh /install.sh
+
+USER grafana
 ENTRYPOINT ["/install.sh"]
